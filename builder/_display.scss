@@ -1,0 +1,21 @@
+$display-values: (
+  flex: flex,
+  block: block,
+  inline-block: inline-block,
+  inline: inline,
+  inline-flex: inline-flex,
+  grid: grid,
+  inline-grid: inline-grid,
+  none: none,
+  table: table,
+  table-row: table-row,
+  table-cell: table-cell,
+);
+
+@mixin display() {
+  @each $name, $value in $display-values {
+    .display-#{$name} {
+      display: $value;
+    }
+  }
+}

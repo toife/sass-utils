@@ -1,0 +1,21 @@
+@use "sass:math";
+
+$aspect-ratio-values: (
+  auto: auto,
+  square: math.div(1, 1),
+  video: math.div(16, 9),
+);
+
+@mixin aspect-ratio() {
+  @each $name, $value in $aspect-ratio-values {
+    .aspect-#{$name} {
+      aspect-ratio: $value;
+    }
+  }
+  .aspect-4-3 {
+    aspect-ratio: math.div(4, 3);
+  }
+  .aspect-3-2 {
+    aspect-ratio: math.div(3, 2);
+  }
+}

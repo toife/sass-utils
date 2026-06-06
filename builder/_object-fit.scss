@@ -1,0 +1,9 @@
+$object-fit-values: (contain, cover, fill, none, scale-down);
+
+@mixin object-fit() {
+  @each $value in $object-fit-values {
+    .object-#{$value} {
+      object-fit: $value;
+    }
+  }
+}

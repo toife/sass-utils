@@ -1,0 +1,52 @@
+$text-align-values: (left, center, right, justify, start, end);
+$text-decoration-values: (
+  underline: underline,
+  "line-through": line-through,
+  "no-underline": none,
+);
+$text-transform-values: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+  capitalize: capitalize,
+  "normal-case": none,
+);
+$whitespace-values: (
+  nowrap: nowrap,
+  pre: pre,
+  "pre-wrap": pre-wrap,
+);
+
+@mixin text() {
+  @each $value in $text-align-values {
+    .text-align-#{$value} {
+      text-align: $value;
+    }
+  }
+  @each $name, $value in $text-decoration-values {
+    .text-decoration-#{$name} {
+      text-decoration: $value;
+    }
+  }
+  @each $name, $value in $text-transform-values {
+    .text-#{$name} {
+      text-transform: $value;
+    }
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .break-words {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  .break-all {
+    word-break: break-all;
+  }
+  @each $name, $value in $whitespace-values {
+    .whitespace-#{$name} {
+      white-space: $value;
+    }
+  }
+}

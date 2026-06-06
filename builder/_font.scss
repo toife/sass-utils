@@ -1,0 +1,42 @@
+@use "sass:math";
+
+$font-weight-values: (
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  light: 300,
+  thin: 100,
+);
+
+@mixin font() {
+  @each $name, $value in $font-weight-values {
+    // Legacy utilities
+    .font-weight-#{$name} {
+      font-weight: $value;
+    }
+  }
+  // Legacy utilities
+  .font-style-italic {
+    font-style: italic;
+  }
+  .font-style-normal {
+    font-style: normal;
+  }
+
+  @for $size from 8 through 30 {
+    $suffix: "#{$size}";
+    @if $size < 10 {
+      $suffix: "0#{$size}";
+    }
+    $value: math.div($size, 10);
+
+    .font-size-#{$suffix} {
+      font-size: #{$value}em !important;
+    }
+
+    .line-height-#{$suffix} {
+      line-height: #{$value}em !important;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use "./spacing";
+@use "./align";
+@use "./justify";
+@use "./flex";
+@use "./display";
+@use "./position";
+@use "./overflow";
+@use "./text";
+@use "./font";
+@use "./size";
+@use "./gap";
+@use "./cursor";
+@use "./visibility";
+@use "./z-index";
+@use "./object-fit";
+@use "./interaction";
+@use "./aspect-ratio";
+@use "./border";
+@use "./color";
+@use "./shadow";
+
+@mixin build() {
+  @include spacing.spacing();
+  @include align.align();
+  @include justify.justify();
+  @include flex.flex();
+  @include display.display();
+  @include position.position();
+  @include overflow.overflow();
+  @include text.text();
+  @include font.font();
+  @include size.size();
+  @include gap.gap();
+  @include cursor.cursor();
+  @include visibility.visibility();
+  @include z-index.z-index();
+  @include object-fit.object-fit();
+  @include interaction.interaction();
+  @include aspect-ratio.aspect-ratio();
+  // @include rounded();
+  @include border.border();
+  @include color.color();
+  @include shadow.shadow();
+}

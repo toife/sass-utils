@@ -1,0 +1,38 @@
+@use "@toife/sass-layer" as sl;
+
+$border-width-values: (
+  0: 0,
+  2: 2px,
+);
+$border-side-values: (
+  top: top,
+  right: right,
+  bottom: bottom,
+  left: left,
+);
+$border-style-values: (
+  none: none,
+  solid: solid,
+  dashed: dashed,
+);
+
+@mixin border() {
+  .border {
+    border-width: #{sl.fn-naming-var("border", "width")};
+  }
+  @each $name, $value in $border-width-values {
+    .border-#{$name} {
+      border-width: $value;
+    }
+  }
+  @each $name, $side in $border-side-values {
+    .border-#{$name} {
+      border-#{$side}-width: 1px;
+    }
+  }
+  @each $name, $value in $border-style-values {
+    .border-#{$name} {
+      border-style: $value;
+    }
+  }
+}

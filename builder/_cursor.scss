@@ -1,0 +1,19 @@
+$cursor-values: (
+  auto,
+  default,
+  pointer,
+  wait,
+  not-allowed,
+  grab,
+  grabbing,
+  move,
+  text
+);
+
+@mixin cursor() {
+  @each $value in $cursor-values {
+    .cursor-#{$value} {
+      cursor: $value;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+$pointer-events-values: (none, auto);
+$user-select-values: (
+  none: none,
+  text: text,
+  all: all,
+);
+$resize-values: (
+  none: none,
+  horizontal: horizontal,
+  vertical: vertical,
+);
+
+@mixin interaction() {
+  @each $value in $pointer-events-values {
+    .pointer-events-#{$value} {
+      pointer-events: $value;
+    }
+  }
+  @each $name, $value in $user-select-values {
+    .select-#{$name} {
+      user-select: $value;
+    }
+  }
+  .resize {
+    resize: both;
+  }
+  @each $name, $value in $resize-values {
+    .resize-#{$name} {
+      resize: $value;
+    }
+  }
+}

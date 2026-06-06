@@ -1,0 +1,33 @@
+$justify-content-values: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "between": space-between,
+  "around": space-around,
+  "evenly": space-evenly,
+  "stretch": stretch,
+  "normal": normal,
+);
+
+$justify-self-values: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "stretch": stretch,
+  "baseline": baseline,
+  "normal": normal,
+);
+
+@mixin justify() {
+  @each $name, $value in $justify-content-values {
+    // Legacy utilities
+    .justify-content-#{$name} {
+      justify-content: $value;
+    }
+  }
+  @each $name, $value in $justify-self-values {
+    .justify-self-#{$name} {
+      justify-self: $value;
+    }
+  }
+}

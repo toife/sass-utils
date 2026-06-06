@@ -1,0 +1,19 @@
+@use "sass:list";
+@use "@toife/sass-layer" as sl;
+
+@mixin color() {
+  @each $name, $value in sl.$roles {
+    $color: sl.fn-naming-palette-var($name, list.nth($value, 2));
+    .color-#{$name} {
+      color: rgb(#{$color}) !important;
+    }
+
+    .background-#{$name} {
+      background-color: rgb(#{$color}) !important;
+    }
+
+    .border-#{$name} {
+      border-color: rgb(#{$color}) !important;
+    }
+  }
+}

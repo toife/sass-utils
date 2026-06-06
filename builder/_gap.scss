@@ -1,0 +1,37 @@
+@use "@toife/sass-layer" as sl;
+
+$spacing-x: sl.fn-naming-var("spacing", "x");
+$spacing-y: sl.fn-naming-var("spacing", "y");
+
+$gap-values: (0, 1, 2, 3, 4, 5, 6, 8, 10);
+$row-col-gap-values: (0, 1, 2, 4, 6);
+
+@mixin gap() {
+  .gap-0 {
+    gap: 0;
+  }
+  @each $n in $gap-values {
+    @if $n != 0 {
+      .gap-#{$n} {
+        gap: calc(#{$spacing-x} * #{$n});
+      }
+    }
+  }
+  @each $n in $row-col-gap-values {
+    @if $n == 0 {
+      .row-gap-0 {
+        row-gap: 0;
+      }
+      .col-gap-0 {
+        column-gap: 0;
+      }
+    } @else {
+      .row-gap-#{$n} {
+        row-gap: calc(#{$spacing-y} * #{$n});
+      }
+      .col-gap-#{$n} {
+        column-gap: calc(#{$spacing-x} * #{$n});
+      }
+    }
+  }
+}

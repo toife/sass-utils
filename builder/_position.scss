@@ -1,0 +1,17 @@
+$position-values: (relative, absolute, fixed, sticky, static);
+
+@mixin position() {
+  @each $pos in $position-values {
+    .position-#{$pos} {
+      position: $pos;
+    }
+  }
+  .inset-0 {
+    inset: 0;
+  }
+  @each $dir in top right bottom left {
+    .#{$dir}-0 {
+      #{$dir}: 0;
+    }
+  }
+}

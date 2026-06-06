@@ -1,0 +1,15 @@
+$z-index-values: (0, 10, 20, 30, 40, 50);
+
+@mixin z-index() {
+  @each $n in $z-index-values {
+    .z-index-#{$n} {
+      z-index: $n;
+    }
+  }
+  .z-index-auto {
+    z-index: auto;
+  }
+  .z-index-max {
+    z-index: 9999;
+  }
+}
