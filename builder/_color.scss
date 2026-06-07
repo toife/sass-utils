@@ -2,7 +2,7 @@
 @use "@toife/sass-layer" as sl;
 
 @mixin color() {
-  @each $name, $value in sl.$roles {
+  @each $name, $value in sl.$colors {
     $color: sl.fn-naming-palette-var($name, list.nth($value, 2));
     .color-#{$name} {
       color: rgb(#{$color}) !important;
