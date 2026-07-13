@@ -16,7 +16,6 @@
 @use "./interaction";
 @use "./aspect-ratio";
 @use "./border";
-@use "./color";
 @use "./shadow";
 
 @mixin build() {
@@ -39,6 +38,5 @@
   @include aspect-ratio.aspect-ratio();
   // @include rounded();
   @include border.border();
-  @include color.color();
   @include shadow.shadow();
 }
