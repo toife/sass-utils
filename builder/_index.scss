@@ -16,6 +16,7 @@
 @use "./interaction";
 @use "./aspect-ratio";
 @use "./border";
+@use "./color";
 @use "./shadow";
 
 @mixin build() {
@@ -36,7 +37,7 @@
   @include object-fit.object-fit();
   @include interaction.interaction();
   @include aspect-ratio.aspect-ratio();
-  // @include rounded();
   @include border.border();
+  @include color.color();
   @include shadow.shadow();
 }

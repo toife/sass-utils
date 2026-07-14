@@ -1,0 +1,30 @@
+@use "sass:list";
+@use "@toife/sass-layer" as sl;
+
+@mixin color() {
+  $colors: ();
+
+  @each $mode-name, $mode-value in sl.$modes {
+    $mode-colors: map.get($mode-value, "colors");
+
+    @each $color-name, $color-value in $mode-colors {
+      $colors: map.set($colors, $color-name, $color-value);
+    }
+  }
+
+  @each $color-name, $color-value in $colors {
+    $color: sl.fn-naming-palette-var($color-name);
+
+    .color-#{$color-name} {
+      color: rgb(#{$color}) !important;
+    }
+
+    .background-#{$color-name} {
+      background-color: rgb(#{$color}) !important;
+    }
+
+    .border-#{$color-name} {
+      border-color: rgb(#{$color}) !important;
+    }
+  }
+}
