@@ -1,4 +1,10 @@
+@use "@toife/sass-layer" as sl;
+
 @mixin shadow() {
+  .shadow{
+    box-shadow: sl.fn-naming-var("box-shadow");
+  }
+
   .shadow-none {
     box-shadow: none;
   }
