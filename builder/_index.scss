@@ -18,7 +18,7 @@
 @use "./border";
 @use "./color";
 @use "./shadow";
-@use "./filter";
+@use "./glass";
 
 @mixin build() {
   @include spacing.spacing();
@@ -41,5 +41,5 @@
   @include border.border();
   @include color.color();
   @include shadow.shadow();
-  @include filter.filter();
+  @include glass.glass();
 }

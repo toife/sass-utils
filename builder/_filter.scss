@@ -1,7 +1,0 @@
-@use "@toife/sass-layer" as sl;
-
-@mixin filter() {
-  .backdrop-filter{
-    backdrop-filter: sl.fn-naming-var("backdrop-filter") !important;
-  }
-}

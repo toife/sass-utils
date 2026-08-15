@@ -1,0 +1,9 @@
+@use "@toife/sass-layer" as sl;
+
+@mixin glass() {
+  .glass{
+    backdrop-filter: #{sl.fn-naming-var("backdrop-filter")} !important;
+    box-shadow: #{sl.fn-naming-var("box-shadow")} !important;
+    background-color: rgba(#{sl.fn-naming-var("background-color")}, 0.9) !important;
+  }
+}
