@@ -1,6 +1,6 @@
 {
   "name": "@toife/sass-utils",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Sass utils - utilities for design tokens, utility classes, and theme generation",
   "type": "module",
   "sideEffects": true,
